@@ -12,15 +12,23 @@ It allows users to search buses, check availability, book/cancel tickets, and ma
 
 ## 📂 Project Structure
 
-BusTicketBooking/
 │── src/
-│ ├── Bus.java
-│ ├── Passenger.java
-│ ├── BookingSystem.java
-│ └── Main.java
+│ ├── controller/
+│ │ └── BusController.java # Handles bus-related operations
+│ ├── service/
+│ │ ├── BookingService.java # Booking logic & validations
+│ │ └── UserService.java # Passenger management
+│ ├── db/
+│ │ └── DBConnection.java # Oracle DB connection setup
+│ ├── model/
+│ │ ├── Bus.java # Bus entity
+│ │ └── Passenger.java # Passenger entity
+│ └── Main.java # Entry point of the application
+│
 │── db/
-│ └── schema.sql
+│ └── schema.sql # Oracle DB schema & tables
 │── README.md
+
 
 ---
 
@@ -32,12 +40,12 @@ BusTicketBooking/
 
 2. Set up Oracle Database:
 
-Create schema using db/schema.sql
+Run the db/schema.sql file to create required tables.
 
-Update DB connection in BookingSystem.java
+Update database URL, username, and password in DBConnection.java.
 
-3. Compile and run:
+3. Compile and Run the program:
 
-javac src/*.java
+javac src/**/*.java
 java src/Main
 
